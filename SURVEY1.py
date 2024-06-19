@@ -18,7 +18,10 @@ def main(page: ft.Page):
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
     normal_border = ft.BorderSide(0, ft.colors.with_opacity(0, ft.colors.BLACK))
-    hovered_border = ft.BorderSide(6, ft.colors.BLACK)
+    hovered_border = ft.BorderSide(4, ft.colors.WHITE)
+
+    normal_title_style = ft.TextStyle(
+        size=16, color=ft.colors.BLACK, weight=ft.FontWeight.BOLD)
 
     def on_chart_event(e: ft.PieChartEvent):
         for idx, section in enumerate(chart.sections):
@@ -26,6 +29,16 @@ def main(page: ft.Page):
                 hovered_border if idx == e.section_index else normal_border
             )
         chart.update()
+
+    def badge(icon, size):
+        return ft.Container(
+            ft.Icon(icon),
+            width=size,
+            height=size,
+            border=ft.border.all(1, ft.colors.WHITE),
+            border_radius=size / 2,
+            bgcolor=ft.colors.BLACK,
+        )
 
     data = LoadFromFile(filename)
 
@@ -67,26 +80,45 @@ def main(page: ft.Page):
             ft.PieChartSection(
                 data["choices"][0][1],
                 color=ft.colors.BLUE,
-                radius=100,
-                border_side=normal_border
+                radius=150,
+                border_side=normal_border,
+                title=data["choices"][0][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_BUS, 40),
+                badge_position=0.98
+
+
             ),
             ft.PieChartSection(
                 data["choices"][1][1],
                 color=ft.colors.YELLOW,
-                radius=100,
-                border_side=normal_border
+                radius=150,
+                border_side=normal_border,
+                title=data["choices"][1][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.ELECTRIC_RICKSHAW, 40),
+                badge_position=0.98
+
             ),
             ft.PieChartSection(
                 data["choices"][2][1],
-                color=ft.colors.PINK,
-                radius=100,
-                border_side=normal_border
+                color=ft.colors.RED,
+                radius=150,
+                border_side=normal_border,
+                title=data["choices"][2][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_CAR, 40),
+                badge_position=0.98
             ),
             ft.PieChartSection(
                 data["choices"][3][1],
                 color=ft.colors.GREEN,
-                radius=100,
-                border_side=normal_border
+                radius=150,
+                border_side=normal_border,
+                title=data["choices"][3][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_WALK, 40),
+                badge_position=0.98
             )
         ]
 
@@ -102,26 +134,43 @@ def main(page: ft.Page):
             ft.PieChartSection(
                 data["choices"][0][1],
                 color=ft.colors.BLUE,
-                radius=100,
+                radius=150,
                 border_side=normal_border,
+                title=data["choices"][0][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_BUS, 40),
+                badge_position=0.98
             ),
             ft.PieChartSection(
                 data["choices"][1][1],
                 color=ft.colors.YELLOW,
-                radius=100,
+                radius=150,
                 border_side=normal_border,
+                title=data["choices"][1][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.ELECTRIC_RICKSHAW, 40),
+                badge_position=0.98
             ),
             ft.PieChartSection(
                 data["choices"][2][1],
-                color=ft.colors.PINK,
-                radius=100,
+                color=ft.colors.RED,
+                radius=150,
                 border_side=normal_border,
+                title=data["choices"][2][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_CAR, 40),
+                badge_position=0.98
+
             ),
             ft.PieChartSection(
                 data["choices"][3][1],
                 color=ft.colors.GREEN,
-                radius=100,
+                radius=150,
                 border_side=normal_border,
+                title=data["choices"][3][1],
+                title_style=normal_title_style,
+                badge=badge(ft.icons.DIRECTIONS_WALK, 40),
+                badge_position=0.98
             )
         ],
         sections_space=1,
@@ -132,4 +181,4 @@ def main(page: ft.Page):
 
     page.add(chart)
 
-ft.app(target=main)
+ft.app(target=main,view=ft.AppView.WEB_BROWSER)
