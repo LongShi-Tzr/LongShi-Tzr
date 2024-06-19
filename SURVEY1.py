@@ -14,14 +14,20 @@ def main(page: ft.Page):
     filename = "Transport_School.txt"
     Rewards = ["Pen", "Ruler", "Pencil"]
 
+    #PageAlignment
     page.vertical_alignment = ft.MainAxisAlignment.CENTER
     page.horizontal_alignment = ft.CrossAxisAlignment.CENTER
 
+    #PieChart Hover and Default design
     normal_border = ft.BorderSide(0, ft.colors.with_opacity(0, ft.colors.BLACK))
     hovered_border = ft.BorderSide(4, ft.colors.WHITE)
 
-    normal_title_style = ft.TextStyle(
-        size=16, color=ft.colors.BLACK, weight=ft.FontWeight.BOLD)
+
+    #PieChart Data representation Design
+    normal_title_style = ft.TextStyle(size=16, color=ft.colors.BLACK, weight=ft.FontWeight.BOLD)
+
+
+
 
     def on_chart_event(e: ft.PieChartEvent):
         for idx, section in enumerate(chart.sections):
@@ -30,6 +36,8 @@ def main(page: ft.Page):
             )
         chart.update()
 
+
+    #Design for Icons on the Chart
     def badge(icon, size):
         return ft.Container(
             ft.Icon(icon),
@@ -42,12 +50,17 @@ def main(page: ft.Page):
 
     data = LoadFromFile(filename)
 
+
+
     bar = ft.AppBar(title=ft.Text("SURVEY1", size=40, weight=ft.FontWeight.BOLD),
                     center_title=True,
                     bgcolor=ft.colors.BLUE_ACCENT,
                     toolbar_opacity=1,
                     )
 
+
+
+    #Users_Choices
     radios=ft.Row(alignment=ft.MainAxisAlignment.CENTER,controls=
     [
         ft.Column(alignment=ft.MainAxisAlignment.CENTER,
@@ -63,8 +76,12 @@ def main(page: ft.Page):
 
     radio_group = ft.RadioGroup(content=radios)
 
-    reward_text = ft.Text("")#RewardText
+    reward_text = ft.Text("")#Reward
 
+
+
+
+    #fn for what the submit button will do
     def submit(e):
         # Update user_choice data
         selected_choice = int(radio_group.value) - 1
@@ -121,14 +138,20 @@ def main(page: ft.Page):
                 badge_position=0.98
             )
         ]
-
+        #Live Updates the rewards and pie chart data whenever submit is clicked
         page.update()
 
+
     submit_btn = ft.ElevatedButton(text="Submit", on_click=submit)
+
 
     page.add(bar)
     page.add(ft.Text(data["question"], size=30),radio_group,submit_btn,reward_text)
 
+
+
+
+    #Representing Data in the form of pie chart
     chart = ft.PieChart(
         sections=[
             ft.PieChartSection(
@@ -173,7 +196,7 @@ def main(page: ft.Page):
                 badge_position=0.98
             )
         ],
-        sections_space=1,
+        sections_space=0,
         center_space_radius=0,
         on_chart_event=on_chart_event,
         expand=True
@@ -181,4 +204,4 @@ def main(page: ft.Page):
 
     page.add(chart)
 
-ft.app(target=main,view=ft.AppView.WEB_BROWSER)
+ft.app(target=main)#,view=ft.AppView.WEB_BROWSER)
