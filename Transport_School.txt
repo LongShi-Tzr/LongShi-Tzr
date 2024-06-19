@@ -1,0 +1,21 @@
+{
+  "question": "How do you come to school?",
+  "choices": [
+    [
+      "School Bus",
+      7
+    ],
+    [
+      "Auto",
+      29
+    ],
+    [
+      "Car",
+      34
+    ],
+    [
+      "Foot",
+      75
+    ]
+  ]
+}

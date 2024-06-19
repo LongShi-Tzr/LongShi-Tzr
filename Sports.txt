@@ -1,0 +1,21 @@
+{
+  "question": "What is your favourite sport in school?",
+  "choices": [
+    [
+      "Table Tennis",
+      2
+    ],
+    [
+      "Badminton",
+      2
+    ],
+    [
+      "BasketBall",
+      2
+    ],
+    [
+      "VolleyBall",
+      2
+    ]
+  ]
+}
