@@ -3,19 +3,19 @@
   "choices": [
     [
       "School Bus",
-      7
+      62
     ],
     [
       "Auto",
-      29
+      45
     ],
     [
       "Car",
-      34
+      42
     ],
     [
-      "Foot",
-      75
+      "Walking",
+      98
     ]
   ]
 }
