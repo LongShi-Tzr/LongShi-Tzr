@@ -11,6 +11,9 @@ def LoadFromFile(filename):
         return json.load(f)
 
 def main(page: ft.Page):
+
+    page.theme_mode=ft.ThemeMode.DARK
+
     filename = "Transport_School.txt"
     Rewards = ["Pen", "Ruler", "Pencil"]
 
@@ -61,6 +64,8 @@ def main(page: ft.Page):
 
 
     #Users_Choices
+
+
     radios=ft.Row(alignment=ft.MainAxisAlignment.CENTER,controls=
     [
         ft.Column(alignment=ft.MainAxisAlignment.CENTER,
