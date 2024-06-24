@@ -1,0 +1,21 @@
+{
+  "question": "Rate our school's cleanliness",
+  "choices": [
+    [
+      "Great",
+      0
+    ],
+    [
+      "Good",
+      0
+    ],
+    [
+      "Average",
+      0
+    ],
+    [
+      "Poor",
+      2
+    ]
+  ]
+}
