@@ -1,21 +1,25 @@
 {
-  "question": "Rate our school's cleanliness",
+  "question": "Rate our School's cleanliness",
   "choices": [
     [
       "Great",
-      0
+      0,
+      "Icons/great.png"
     ],
     [
       "Good",
-      0
+      0,
+      "Icons/good.png"
     ],
     [
       "Average",
-      0
+      0,
+      "Icons/average.png"
     ],
     [
       "Poor",
-      2
+      0,
+      "Icons/poor.png"
     ]
   ]
 }

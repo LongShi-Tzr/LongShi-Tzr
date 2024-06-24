@@ -3,19 +3,28 @@
   "choices": [
     [
       "Football",
-      4
+      0,
+      "Icons/football.png"
     ],
     [
       "Badminton",
-      4
+      0,
+      "Icons/badminton.png"
     ],
     [
       "BasketBall",
-      4
+      0,
+      "Icons/basketball.png"
     ],
     [
       "VolleyBall",
-      9
+      0,
+      "Icons/volleyball.png"
+    ],
+    [
+      "TableTennis",
+      0,
+      "Icons/tt.png"
     ]
   ]
 }
